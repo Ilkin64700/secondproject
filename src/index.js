@@ -1,13 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import Provider from "./Context/Context";
+import LangProvider from "./Context/LangContext";
+import BasketProvider from "./Context/BasketContext";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Provider>
+        <LangProvider>
+         <BasketProvider>
+         <App />
+         </BasketProvider>
+        </LangProvider>
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

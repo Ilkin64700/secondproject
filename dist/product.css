@@ -1,0 +1,22 @@
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4rem 0 1rem;
+}
+.product-header .basket {
+  position: relative;
+}
+.product-header .basket button {
+  margin-right: 3rem;
+  font-size: 25px;
+}
+.product-header .basket .basket-count {
+  position: absolute;
+  background-color: white;
+  border-radius: 10px;
+  width: 20px;
+  text-align: center;
+  left: 40px;
+  top: -6px;
+}/*# sourceMappingURL=product.css.map */

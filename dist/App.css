@@ -1,0 +1,285 @@
+.collapse {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.bgcolor {
+  background-color: #bb9f9f;
+  border-radius: 5px;
+}
+
+.buttonbgcolor {
+  background-color: green !important;
+  color: white;
+}
+
+.tablestyle {
+  margin: 0 auto;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+}
+.tablestyle tr th {
+  padding: 20px 8px;
+  background-color: #04aa6d;
+  color: white;
+  border: 1px solid #ddd;
+}
+.tablestyle tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.tablestyle tr:hover {
+  background-color: #ddd;
+}
+.tablestyle tr td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.button-list {
+  text-align: center;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-list .leftcontent {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 16%;
+}
+.button-list .leftcontent p {
+  margin: 0;
+}
+.button-list .rightcontent .button-previous {
+  border: none;
+  background-color: white;
+  padding: 8px 16px;
+}
+.button-list .rightcontent .button-next {
+  border: none;
+  background-color: white;
+  padding: 8px 16px;
+}
+.button-list .rightcontent .button-item {
+  border: none;
+  background-color: white;
+  padding: 8px 16px;
+}
+
+.product {
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+.product .container .product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.product .container .product-list .product-item {
+  width: 20%;
+  padding: 25px 25px 10px 0;
+}
+.product .container .product-list .product-item .product-image {
+  text-align: center;
+}
+.product .container .product-list .product-item .product-image img {
+  width: 70px;
+  height: 70px;
+  border: 1px solid white;
+  border-radius: 35px;
+}
+.product .container .product-list .product-item label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.product .container .product-list .product-item input[type=text] {
+  width: 90%;
+  margin-bottom: 5px;
+}
+.product .container .product-list .product-item textarea {
+  width: 90%;
+}
+.product .container .product-list .product-item input[type=number] {
+  width: 90%;
+  margin-bottom: 10px;
+}
+.product .container .product-list .product-item .product-rate {
+  width: 50%;
+  display: inline-block;
+}
+.product .container .product-list .product-item .product-count {
+  width: 44%;
+  display: inline-block;
+}
+.product .container .product-list .product-item .allbuttons {
+  display: flex;
+  justify-content: space-between;
+}
+.product .container .product-list .product-item .allbuttons .button-info {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: yellow;
+  color: black;
+  transition: all 0.3s ease;
+}
+.product .container .product-list .product-item .allbuttons .button-info:hover {
+  color: white;
+  background-color: black;
+}
+.product .container .product-list .product-item .allbuttons .button-delete {
+  border: none;
+  margin-right: 25px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: red;
+  color: white;
+  transition: all 0.3s ease;
+}
+.product .container .product-list .product-item .allbuttons .button-delete:hover {
+  color: black;
+  background-color: orange;
+}
+
+.addmodal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding-top: 6rem;
+}
+.addmodal-overlay .addmodal {
+  background: rgb(0, 0, 0);
+  border: 1px solid green;
+  border-radius: 5px;
+  width: 30%;
+  margin: 0 auto;
+  transition: all 0.3s;
+  animation: modalanimation 0.7s ease-out forwards;
+}
+.addmodal-overlay .addmodal .modalheader {
+  padding: 15px 0 0 15px;
+  display: flex;
+  justify-content: space-between;
+  background-color: darkgray;
+  border: 5px solid darkgray;
+  border-radius: 5px;
+}
+.addmodal-overlay .addmodal .modalheader .modalicon .closeicon {
+  margin-right: 15px;
+  font-size: 35px;
+  cursor: pointer;
+}
+.addmodal-overlay .addmodal .formcontent {
+  padding-left: 15px;
+}
+.addmodal-overlay .addmodal .formcontent label {
+  display: block;
+  padding: 15px 0 5px 0;
+  color: white;
+}
+.addmodal-overlay .addmodal .formcontent input {
+  border: 1px solid cornflowerblue;
+  border-radius: 5px;
+  width: 90%;
+  padding: 5px 0;
+}
+.addmodal-overlay .addmodal .formcontent input:focus {
+  outline: 0;
+}
+.addmodal-overlay .addmodal .formcontent .savebutton {
+  display: block;
+  margin: 25px 0;
+  width: 90%;
+  color: white;
+  border: none;
+  background-color: slateblue;
+  padding: 15px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.addmodal-overlay .addmodal .formcontent .savebutton:hover {
+  background-color: blue;
+  color: white;
+}
+
+@keyframes modalanimation {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+.formcontent .product-rate {
+  width: 50%;
+  display: inline-block;
+}
+.formcontent .product-count {
+  width: 44%;
+  display: inline-block;
+}
+
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.light {
+  background-color: rgb(143, 123, 123);
+}
+.light .navbar {
+  background-color: rgb(193, 193, 228) !important;
+}
+.light .card {
+  background-color: aquamarine;
+}
+.light .card button {
+  background-color: brown;
+  border-color: brown;
+  transition: all 0.3s;
+}
+.light .card button:hover {
+  color: black;
+  background-color: #ddd;
+}
+
+.dark {
+  background-color: rgb(42, 43, 51);
+}
+.dark .navbar {
+  background-color: darkblue !important;
+}
+.dark .card {
+  background-color: aqua;
+}
+.dark .card button {
+  transition: all 0.3s;
+}
+.dark .card button:hover {
+  color: black;
+  background-color: white;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+}
+
+body {
+  margin-top: 4rem;
+}
+
+.cardlist {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=App.css.map */
