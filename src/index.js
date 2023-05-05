@@ -8,7 +8,6 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import Provider from "./Context/Context";
 import LangProvider from "./Context/LangContext";
-import BasketProvider from "./Context/BasketContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,9 +15,7 @@ root.render(
     <BrowserRouter>
       <Provider>
         <LangProvider>
-         <BasketProvider>
          <App />
-         </BasketProvider>
         </LangProvider>
       </Provider>
     </BrowserRouter>

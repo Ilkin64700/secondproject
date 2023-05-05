@@ -11,6 +11,9 @@
   margin-right: 3rem;
   font-size: 25px;
 }
+.product-header .basket button a {
+  color: black;
+}
 .product-header .basket .basket-count {
   position: absolute;
   background-color: white;

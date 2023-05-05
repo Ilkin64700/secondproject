@@ -9,13 +9,15 @@ import Employee from "./components/Router/Employee";
 import Product from "./components/Router/Product/Product";
 import ProductTwo from "./components/Router/Product/ProductTwo";
 import { Context } from "./Context/Context";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { LangContext } from "./Context/LangContext";
 import BasketProduct from "./components/Router/Product/BasketProduct";
  
 function App() {
 const {theme,setTheme}=useContext(Context)
 const { language, setLanguage, weblanguages } = useContext(LangContext);
+const [basket, setBasket] = useState([]);
+
 
 
   const Tabs = [
@@ -25,7 +27,7 @@ const { language, setLanguage, weblanguages } = useContext(LangContext);
     { path: "/user", element: <User />, name: weblanguages[language]?.user },
     { path: "/employee", element: <Employee />, name: weblanguages[language]?.employee },
     { path: "/product", element: <Product />, name: weblanguages[language]?.product },
-    { path: "/ProductTwo", element: <ProductTwo />, name: weblanguages[language]?.producttwo },
+    { path: "/producttwo", element: <ProductTwo basket={basket} setBasket={setBasket} />, name: weblanguages[language]?.producttwo },
   ];
 
    
@@ -40,7 +42,7 @@ const { language, setLanguage, weblanguages } = useContext(LangContext);
             </>
           ))}
           {/* <Route path='/' element={<Navigate to="/home" replace/>}/> */}
-          <Route path="/basketproduct" element={<BasketProduct/>}/>
+          <Route path="/producttwo/basketproduct" element={<BasketProduct basket={basket}/>}/>
         </Routes>
     </div>
   );
