@@ -282,4 +282,16 @@ body {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.card-body .checkedproduct {
+  padding-top: 15px;
+}
+.card-body .checkedproduct label {
+  padding-right: 20px;
+}
+.card-body .checkedproduct input {
+  width: 20px;
+  height: 20px;
 }/*# sourceMappingURL=App.css.map */

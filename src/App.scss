@@ -253,7 +253,7 @@
 
 .light {
   background-color: rgb(143, 123, 123);
-  
+
   .navbar {
     background-color: rgb(193, 193, 228) !important;
   }
@@ -263,7 +263,7 @@
       background-color: brown;
       border-color: brown;
       transition: all 0.3s;
-      &:hover{
+      &:hover {
         color: black;
         background-color: #ddd;
       }
@@ -278,9 +278,9 @@
   }
   .card {
     background-color: aqua;
-    button{
+    button {
       transition: all 0.3s;
-      &:hover{
+      &:hover {
         color: black;
         background-color: white;
       }
@@ -288,20 +288,33 @@
   }
 }
 
-
-.navbar{
+.navbar {
   position: fixed;
   z-index: 100;
   top: 0;
   width: 100%;
 }
 
-body{
+body {
   margin-top: 4rem;
 }
 
-.cardlist{
+.cardlist {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.card-body {
+  .checkedproduct {
+    padding-top: 15px;
+    label {
+      padding-right: 20px;
+    }
+    input {
+      width: 20px;
+      height: 20px;
+    }
+  }
 }

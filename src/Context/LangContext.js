@@ -9,10 +9,11 @@ const LangProvider = ({ children }) => {
       servicetitle: "Title",
       servicebody: "Body",
       add: "Add",
-      name:"Name",
+      name:"Full Name",
       email:"Email",
       location:"Location",
       phone:"Phone",
+      age:"Age",
       totalexpenses:"Total Expenses",
       totalorders:"Total Orders",
       selecttextfirstpart:"Showing 1 to ",
@@ -36,10 +37,11 @@ const LangProvider = ({ children }) => {
       servicetitle: "Başlıq",
       servicebody: "Əsas Hissə",
       add: "Əlavə et",
-      name:"Ad",
+      name:"Ad və Soyadı",
       email:"Mail Ünvanı",
       location:"Məkan",
       phone:"Telefon",
+      age:"Yaşı",
       totalexpenses:"Ümumi Xərclər",
       totalorders:"Ümumi Sifarişlər",
       selecttextfirstpart:"1-dən  ",
@@ -72,6 +74,7 @@ const LangProvider = ({ children }) => {
       setLanguage(localStorage.getItem("localization"))
     }
    },[])
+   
    const [language, setLanguage] = useState(localStorage.getItem("localization"));
 
    

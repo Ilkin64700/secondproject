@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { IoCloseSharp } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
 
-const Info = ({show,setShow,product,setProduct,id}) => {
+const Info = ({state,setState,id,show}) => {
+const navigate=useNavigate();
 
 const [infoModalData,setInfoModalData]=useState()
 
+
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
+    fetch(`https://fakestoreapi.com/products/${state.id}`)
       .then((response) => response.json())
       .then((response) => setInfoModalData(response))
       .catch((error) => console.log(error));
@@ -15,13 +18,18 @@ const [infoModalData,setInfoModalData]=useState()
   return (
     <div
       onClick={() => {
-        setShow(false);
+        // setState({
+        //   type: "SHOW",
+        //   show: false,
+        // });
+        navigate(-1)
       }}
       className="addmodal-overlay"
     >
       <div
         onClick={(e) => {
-          e.stopPropagation();
+          // e.stopPropagation();
+          navigate(-1)
         }}
         className="addmodal"
       >
@@ -29,7 +37,12 @@ const [infoModalData,setInfoModalData]=useState()
           <div className="modaltext">Info</div>
           <div className="modalicon">
             <IoCloseSharp
-              onClick={() => setShow(false)}
+              onClick={() => 
+                {
+                  // setState({  type: "SHOW",show: false,});
+                  navigate("/producttwo")
+                }
+              }
               className="closeicon"
             />
           </div>
@@ -67,7 +80,11 @@ const [infoModalData,setInfoModalData]=useState()
           </div>
           <button
             onClick={() => {
-              setShow(false);
+              // setState({
+              //   type: "SHOW",
+              //   show: false,
+              // });
+              navigate("/producttwo")
             }}
             className="savebutton"
           >

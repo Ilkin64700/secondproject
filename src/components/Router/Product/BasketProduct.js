@@ -1,21 +1,30 @@
 import React, {useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const BasketProduct = ({basket}) => {
+const BasketProduct = () => {
+  const navigate=useNavigate();
 
-  // useEffect(() => {
-  //  const basket=JSON.parse(localStorage.getItem("basket"))
-  //  if(basket){
-  //   setBasket(basket)
-  //  }
-  // }, [])
-  
+
+  const [basketproductitems, setBasketProductItems] = useState([]);
+
+
+  useEffect(() => {
+   const basketproducts=JSON.parse(localStorage.getItem("basket"))
+   if(basketproducts){
+    setBasketProductItems(basketproducts)
+   }
+  }, [])
+
+
 
   return (
     <>
       <div>
         <h2>Checkout</h2>
+        <button onClick={()=>{navigate(-1)}}  className="btn btn-info backto ">
+          Back to</button>
         <div className="cardlist">
-          {basket?.map((item, index) => (
+          {basketproductitems?.map((item, index) => (
             <div className="card" style={{ width: "18rem" }}>
               <img
                 src={item.image}

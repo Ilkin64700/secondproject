@@ -1,8 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import customerslist from "../customers-list.json";
 import { LangContext } from "../../Context/LangContext";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 
 const User = () => {
+  // const {page : currentRoutePage} =useParams();
+  // const navigate=useNavigate();
+
+  const [searchParams,setSearchParams] = useSearchParams()
+  
+  // console.log("searchParams",searchParams.get("limit"))
+
+
   const { language, setLanguage, weblanguages } = useContext(LangContext);
 
   const optionValues = [10,20,50,100];
@@ -12,6 +21,7 @@ const User = () => {
   const userFirstIndex = userLastIndex - userPerPage;
   const [currentUserData, setCurrentUserData] = useState(customerslist);
   const [buttonColorIndex, setButtonColorIndex] = useState(0);
+
 
   useEffect(() => {
     setCurrentUserData(customerslist.slice(userFirstIndex, userLastIndex));
@@ -34,6 +44,7 @@ const User = () => {
   const prevButton = () => {
     if (currentPage !== 1) {
       setcurrentPage(currentPage - 1);
+      // navigate(`../${currentRoutePage - 1}`)
       setButtonColorIndex(currentPage - 2);
     }
   };
@@ -41,9 +52,11 @@ const User = () => {
   const nextButton = () => {
     if (currentPage !== 10) {
       setcurrentPage(currentPage + 1);
+      // navigate(`../${currentRoutePage + 1}`)
       setButtonColorIndex(currentPage);
     }
   };
+
 
   const selectValueChange = (e) => {
     const selectOptionNumberList = customerslist.slice(0, e.target.value);
